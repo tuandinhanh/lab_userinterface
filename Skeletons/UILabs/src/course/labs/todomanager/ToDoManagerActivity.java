@@ -215,5 +215,5 @@ public class ToDoManagerActivity extends ListActivity {
 		}
 		Log.i(TAG, msg);
 	}
-
+	// add comment for git demo
 }
