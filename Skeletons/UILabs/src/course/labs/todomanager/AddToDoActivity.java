@@ -108,7 +108,8 @@ public class AddToDoActivity extends Activity {
 
 				//TODO - Reset data fields to default values
 				setDefaultDateTime();
-
+				mStatusRadioGroup.check(mDefaultStatusButton.getId());
+				mPriorityRadioGroup.check(mDefaultPriorityButton.getId());
 			
 			
 			

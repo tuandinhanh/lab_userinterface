@@ -100,13 +100,13 @@ public class ToDoListAdapter extends BaseAdapter {
 
 		//TODO - Display Title in TextView
 
-		final TextView titleView = (TextView) parent.findViewById(R.id.titleView);
+		final TextView titleView = (TextView) itemLayout.findViewById(R.id.titleView);
 		titleView.setText(toDoItem.getTitle());
 		
 		
 		// TODO - Set up Status CheckBox
 	
-		final CheckBox statusView = (CheckBox) parent.findViewById(R.id.statusCheckBox);
+		final CheckBox statusView = (CheckBox) itemLayout.findViewById(R.id.statusCheckBox);
 		Status status = toDoItem.getStatus();
 		if(status == Status.DONE){
 			statusView.setChecked(true);
@@ -124,8 +124,10 @@ public class ToDoListAdapter extends BaseAdapter {
 				// is called when the user toggles the status checkbox
 				if(isChecked){
 					toDoItem.setStatus(Status.DONE);
+					statusView.setChecked(true);
 				}else{
 					toDoItem.setStatus(Status.NOTDONE);
+					statusView.setChecked(false);
 				}
 			
 			}
@@ -133,12 +135,12 @@ public class ToDoListAdapter extends BaseAdapter {
 
 		//TODO - Display Priority in a TextView
 
-		final TextView priorityView = (TextView) parent.findViewById(R.id.priorityView);
+		final TextView priorityView = (TextView) itemLayout.findViewById(R.id.priorityView);
 		priorityView.setText(toDoItem.getPriority().toString());
 		// TODO - Display Time and Date. 
 		// Hint - use ToDoItem.FORMAT.format(toDoItem.getDate()) to get date and time String
 
-		final TextView dateView = (TextView) parent.findViewById(R.id.dateView);
+		final TextView dateView = (TextView) itemLayout.findViewById(R.id.dateView);
 		dateView.setText(ToDoItem.FORMAT.format(toDoItem.getDate()));		
 
 		// Return the View you just created
